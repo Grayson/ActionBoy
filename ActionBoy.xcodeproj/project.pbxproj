@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1970E513B4C67C003C5E24 /* MainWindowController+PrivateMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1970E413B4C67C003C5E24 /* MainWindowController+PrivateMethods.m */; };
 		1D8EB6BC13B3DB46003B70DB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8EB6BB13B3DB46003B70DB /* Cocoa.framework */; };
 		1D8EB6C613B3DB46003B70DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D8EB6C413B3DB46003B70DB /* InfoPlist.strings */; };
 		1D8EB6C913B3DB46003B70DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8EB6C813B3DB46003B70DB /* main.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D1970E313B4C67C003C5E24 /* MainWindowController+PrivateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainWindowController+PrivateMethods.h"; sourceTree = "<group>"; };
+		1D1970E413B4C67C003C5E24 /* MainWindowController+PrivateMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MainWindowController+PrivateMethods.m"; sourceTree = "<group>"; };
 		1D8EB6B713B3DB46003B70DB /* ActionBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8EB6BB13B3DB46003B70DB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1D8EB6BE13B3DB46003B70DB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -101,6 +104,8 @@
 				1D8EB6CE13B3DB46003B70DB /* ActionBoyAppDelegate.m */,
 				1D8EB6E913B3E249003B70DB /* MainWindowController.h */,
 				1D8EB6EA13B3E249003B70DB /* MainWindowController.m */,
+				1D1970E313B4C67C003C5E24 /* MainWindowController+PrivateMethods.h */,
+				1D1970E413B4C67C003C5E24 /* MainWindowController+PrivateMethods.m */,
 				1D8EB6D013B3DB46003B70DB /* MainMenu.xib */,
 				1D8EB6E713B3E191003B70DB /* MainWindow.xib */,
 				1D8EB6C213B3DB46003B70DB /* Supporting Files */,
@@ -199,6 +204,7 @@
 				1D8EB6CF13B3DB46003B70DB /* ActionBoyAppDelegate.m in Sources */,
 				1D8EB6E213B3E09C003B70DB /* NSApplescript+FCSAdditions.m in Sources */,
 				1D8EB6EB13B3E249003B70DB /* MainWindowController.m in Sources */,
+				1D1970E513B4C67C003C5E24 /* MainWindowController+PrivateMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

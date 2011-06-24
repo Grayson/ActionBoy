@@ -21,6 +21,7 @@
 		self.folderActionsStatusScript = [NSAppleScript appleScriptWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FolderActionStatus" ofType:@"scpt"]];
 
 		[NSBundle loadNibNamed:@"MainWindow" owner:self];
+		[NSTimer scheduledTimerWithTimeInterval:2. target:self selector:@selector(_pollForFolderActionStatus) userInfo:nil repeats:YES];
     }
     
     return self;
