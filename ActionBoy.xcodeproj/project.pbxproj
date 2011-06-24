@@ -13,6 +13,11 @@
 		1D8EB6CC13B3DB46003B70DB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8EB6CA13B3DB46003B70DB /* Credits.rtf */; };
 		1D8EB6CF13B3DB46003B70DB /* ActionBoyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8EB6CE13B3DB46003B70DB /* ActionBoyAppDelegate.m */; };
 		1D8EB6D213B3DB46003B70DB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D8EB6D013B3DB46003B70DB /* MainMenu.xib */; };
+		1D8EB6E213B3E09C003B70DB /* NSApplescript+FCSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8EB6E113B3E09C003B70DB /* NSApplescript+FCSAdditions.m */; };
+		1D8EB6E613B3E17F003B70DB /* FolderActionStatus.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 1D8EB6E513B3E17F003B70DB /* FolderActionStatus.scpt */; };
+		1D8EB6E813B3E191003B70DB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D8EB6E713B3E191003B70DB /* MainWindow.xib */; };
+		1D8EB6EB13B3E249003B70DB /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8EB6EA13B3E249003B70DB /* MainWindowController.m */; };
+		1D8EB6ED13B3F476003B70DB /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8EB6EC13B3F476003B70DB /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,13 @@
 		1D8EB6CD13B3DB46003B70DB /* ActionBoyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionBoyAppDelegate.h; sourceTree = "<group>"; };
 		1D8EB6CE13B3DB46003B70DB /* ActionBoyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionBoyAppDelegate.m; sourceTree = "<group>"; };
 		1D8EB6D113B3DB46003B70DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1D8EB6E013B3E09C003B70DB /* NSApplescript+FCSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSApplescript+FCSAdditions.h"; path = "../../FCSFramework/NSApplescript+FCSAdditions.h"; sourceTree = "<group>"; };
+		1D8EB6E113B3E09C003B70DB /* NSApplescript+FCSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSApplescript+FCSAdditions.m"; path = "../../FCSFramework/NSApplescript+FCSAdditions.m"; sourceTree = "<group>"; };
+		1D8EB6E513B3E17F003B70DB /* FolderActionStatus.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = FolderActionStatus.scpt; sourceTree = "<group>"; };
+		1D8EB6E713B3E191003B70DB /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../MainWindow.xib; sourceTree = "<group>"; };
+		1D8EB6E913B3E249003B70DB /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		1D8EB6EA13B3E249003B70DB /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		1D8EB6EC13B3F476003B70DB /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8EB6ED13B3F476003B70DB /* Carbon.framework in Frameworks */,
 				1D8EB6BC13B3DB46003B70DB /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +59,7 @@
 		1D8EB6AC13B3DB46003B70DB = {
 			isa = PBXGroup;
 			children = (
+				1D8EB6EC13B3F476003B70DB /* Carbon.framework */,
 				1D8EB6C113B3DB46003B70DB /* ActionBoy */,
 				1D8EB6BA13B3DB46003B70DB /* Frameworks */,
 				1D8EB6B813B3DB46003B70DB /* Products */,
@@ -82,9 +96,13 @@
 		1D8EB6C113B3DB46003B70DB /* ActionBoy */ = {
 			isa = PBXGroup;
 			children = (
+				1D8EB6E413B3E0A3003B70DB /* FCS Sources */,
 				1D8EB6CD13B3DB46003B70DB /* ActionBoyAppDelegate.h */,
 				1D8EB6CE13B3DB46003B70DB /* ActionBoyAppDelegate.m */,
+				1D8EB6E913B3E249003B70DB /* MainWindowController.h */,
+				1D8EB6EA13B3E249003B70DB /* MainWindowController.m */,
 				1D8EB6D013B3DB46003B70DB /* MainMenu.xib */,
+				1D8EB6E713B3E191003B70DB /* MainWindow.xib */,
 				1D8EB6C213B3DB46003B70DB /* Supporting Files */,
 			);
 			path = ActionBoy;
@@ -93,6 +111,7 @@
 		1D8EB6C213B3DB46003B70DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D8EB6E513B3E17F003B70DB /* FolderActionStatus.scpt */,
 				1D8EB6C313B3DB46003B70DB /* ActionBoy-Info.plist */,
 				1D8EB6C413B3DB46003B70DB /* InfoPlist.strings */,
 				1D8EB6C713B3DB46003B70DB /* ActionBoy-Prefix.pch */,
@@ -100,6 +119,15 @@
 				1D8EB6CA13B3DB46003B70DB /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D8EB6E413B3E0A3003B70DB /* FCS Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1D8EB6E013B3E09C003B70DB /* NSApplescript+FCSAdditions.h */,
+				1D8EB6E113B3E09C003B70DB /* NSApplescript+FCSAdditions.m */,
+			);
+			name = "FCS Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +183,8 @@
 				1D8EB6C613B3DB46003B70DB /* InfoPlist.strings in Resources */,
 				1D8EB6CC13B3DB46003B70DB /* Credits.rtf in Resources */,
 				1D8EB6D213B3DB46003B70DB /* MainMenu.xib in Resources */,
+				1D8EB6E613B3E17F003B70DB /* FolderActionStatus.scpt in Resources */,
+				1D8EB6E813B3E191003B70DB /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +197,8 @@
 			files = (
 				1D8EB6C913B3DB46003B70DB /* main.m in Sources */,
 				1D8EB6CF13B3DB46003B70DB /* ActionBoyAppDelegate.m in Sources */,
+				1D8EB6E213B3E09C003B70DB /* NSApplescript+FCSAdditions.m in Sources */,
+				1D8EB6EB13B3E249003B70DB /* MainWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +313,7 @@
 				1D8EB6D713B3DB46003B70DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

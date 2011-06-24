@@ -9,8 +9,23 @@
 #import "ActionBoyAppDelegate.h"
 
 @implementation ActionBoyAppDelegate
+@synthesize mainWindowController = _mainWindowController;
 
-@synthesize window;
+- (id)init
+{
+	self = [super init];
+	if (!self) return nil;
+	
+	self.mainWindowController = [[MainWindowController new] autorelease];
+	
+	return self;
+}
+
+- (void)dealloc
+{
+	self.mainWindowController = nil;
+	[super dealloc];
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
