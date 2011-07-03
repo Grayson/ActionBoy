@@ -12,7 +12,6 @@
 @implementation AddActionController
 @synthesize window = _window;
 @synthesize predicateEditor = _predicateEditor;
-@synthesize predicate = _predicate;
 @synthesize filePath = _filePath;
 @dynamic files;
 
@@ -29,7 +28,6 @@
 - (void)dealloc
 {
 	self.window = nil;
-	self.predicate = nil;
 	self.predicateEditor = nil;
 	self.filePath = nil;
     [super dealloc];
@@ -40,11 +38,11 @@
 	NSArray *keyPaths = [NSArray arrayWithObjects:[NSExpression expressionForKeyPath:@"name"],
 	                                              [NSExpression expressionForKeyPath:@"path"],
 												  [NSExpression expressionForKeyPath:@"extension"], nil];
-	NSArray *operators = [NSArray arrayWithObjects:[NSNumber numberWithInteger:NSEqualToPredicateOperatorType],
+	NSArray *operators = [NSArray arrayWithObjects:[NSNumber numberWithInteger:NSContainsPredicateOperatorType],
+												   [NSNumber numberWithInteger:NSEqualToPredicateOperatorType],
 	                                               [NSNumber numberWithInteger:NSNotEqualToPredicateOperatorType],
 	                                               [NSNumber numberWithInteger:NSBeginsWithPredicateOperatorType],
 	                                               [NSNumber numberWithInteger:NSEndsWithPredicateOperatorType],
-	                                               [NSNumber numberWithInteger:NSContainsPredicateOperatorType],
 	                                               nil];
 
 	NSPredicateEditorRowTemplate *template = [[NSPredicateEditorRowTemplate alloc] initWithLeftExpressions:keyPaths
@@ -64,6 +62,7 @@
 	[compound release];
 
 	[self.predicateEditor setRowTemplates:rowTemplates];
+	[self.predicateEditor addRow:self];
 }
 
 +(NSSet *)keyPathsForValuesAffectingFiles {
@@ -78,12 +77,13 @@
 	
 	NSMutableArray *files = [NSMutableArray array];
 	for (NSString *fileName in fileNames) {
+		if ([fileName hasPrefix:@"."]) continue; // Skip hidden files
 		NSString *name = [fileName stringByDeletingPathExtension];
 		NSString *ext = [fileName pathExtension];
 		if (ext == nil) ext = @"";
 		[files addObject:[NSDictionary dictionaryWithObjectsAndKeys:name, @"name", ext, @"extension", nil]];
 	}
-	return files;
+	return self.predicateEditor.objectValue ? [files filteredArrayUsingPredicate:self.predicateEditor.objectValue] : files;
 }
 
 - (IBAction)chooseFolder:(id)sender {
@@ -97,7 +97,6 @@
 - (IBAction)open:(id)sender {
 	self.filePath = NSHomeDirectory();
 	[NSApp beginSheet:self.window modalForWindow:[NSApp mainWindow] modalDelegate:self didEndSelector:nil contextInfo:nil];
-	[self.predicateEditor addRow:self];
 }
 
 - (IBAction)cancel:(id)sender {
@@ -105,8 +104,12 @@
 	[self.window orderOut:sender];
 }
 
+- (IBAction)predicateEditorRulesHaveChanged:(id)sender {
+	self.filePath = self.filePath; // Update the files array.
+}
+
 - (IBAction)apply:(id)sender {
-	NSLog(@"%@", self.predicate);
+	NSLog(@"%@", self.predicateEditor.objectValue);
 	
 	[NSApp endSheet:self.window];
 	[self.window orderOut:sender];

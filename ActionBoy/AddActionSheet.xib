@@ -140,7 +140,7 @@
 													<string key="NSFrameSize">{438, 127}</string>
 													<reference key="NSSuperview" ref="858313404"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="858313404"/>
+													<reference key="NSNextKeyView" ref="693478101"/>
 												</object>
 											</object>
 											<object class="NSMutableSet" key="NSDragTypes">
@@ -303,7 +303,7 @@
 								<reference key="NSSupport" ref="800958990"/>
 								<reference key="NSControlView" ref="559230662"/>
 								<reference key="NSBackgroundColor" ref="656625213"/>
-								<object class="NSColor" key="NSTextColor" id="227760493">
+								<object class="NSColor" key="NSTextColor" id="216092342">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">controlShadowColor</string>
@@ -329,7 +329,7 @@
 								<reference key="NSSupport" ref="800958990"/>
 								<reference key="NSControlView" ref="298069341"/>
 								<reference key="NSBackgroundColor" ref="656625213"/>
-								<reference key="NSTextColor" ref="227760493"/>
+								<reference key="NSTextColor" ref="216092342"/>
 							</object>
 						</object>
 					</object>
@@ -419,6 +419,14 @@
 					<int key="connectionID">105</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">chooseFolder:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="643892629"/>
+					</object>
+					<int key="connectionID">111</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: arrangedObjects.name</string>
 						<reference key="source" ref="559230662"/>
@@ -429,18 +437,22 @@
 							<string key="NSLabel">value: arrangedObjects.name</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">arrangedObjects.name</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">ArrayToStringTransformer</string>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">110</int>
+					<int key="connectionID">141</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">chooseFolder:</string>
+						<string key="label">predicateEditorRulesHaveChanged:</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="643892629"/>
+						<reference key="destination" ref="858313404"/>
 					</object>
-					<int key="connectionID">111</int>
+					<int key="connectionID">142</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -706,7 +718,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">140</int>
+			<int key="maxID">142</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -722,9 +734,11 @@
 							<string>cancel:</string>
 							<string>chooseFolder:</string>
 							<string>open:</string>
+							<string>predicateEditorRulesHaveChanged:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -739,6 +753,7 @@
 							<string>cancel:</string>
 							<string>chooseFolder:</string>
 							<string>open:</string>
+							<string>predicateEditorRulesHaveChanged:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -756,6 +771,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">open:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">predicateEditorRulesHaveChanged:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>

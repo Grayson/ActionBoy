@@ -13,12 +13,10 @@
 @private
     IBOutlet NSWindow *_window;
 	IBOutlet NSPredicateEditor *_predicateEditor;
-	NSPredicate *_predicate;
 	NSString *_filePath;
 }
 @property (retain) NSWindow *window;
 @property (retain) NSPredicateEditor *predicateEditor;
-@property (retain) NSPredicate *predicate;
 @property (retain) NSString *filePath;
 @property (retain) NSArray *files;
 
@@ -27,5 +25,7 @@
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)apply:(id)sender;
+
+- (IBAction)predicateEditorRulesHaveChanged:(id)sender;
 
 @end
