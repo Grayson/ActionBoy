@@ -13,6 +13,8 @@
 @dynamic folderActionsAreEnabled;
 @synthesize folderActionsStatusScript = _folderActionsStatusScript;
 @synthesize window = _window;
+@synthesize toggleView = _toggleView;
+@synthesize addActionController = _addActionController;
 
 - (id)init
 {
@@ -30,13 +32,15 @@
 - (void)dealloc
 {
 	self.folderActionsStatusScript = nil;
+	self.toggleView = nil;
+	self.window = nil;
+	self.addActionController = nil;
     [super dealloc];
 }
 
 - (void)awakeFromNib
 {
-	NSLog(@"%@", self.folderActionsStatusScript);
-	NSLog(@"%@", [self.folderActionsStatusScript callHandler:@"areFolderActionsEnabled" withArguments:nil errorInfo:nil]);
+	self.folderActionsAreEnabled = self.folderActionsAreEnabled;
 }
 
 - (BOOL)folderActionsAreEnabled
@@ -47,10 +51,19 @@
 
 - (void)setFolderActionsAreEnabled:(BOOL)aValue
 {
-	// setFolderActionsEnabled
 	NSAppleEventDescriptor *args = [NSAppleEventDescriptor listDescriptor];
 	[args insertDescriptor:[NSAppleEventDescriptor descriptorWithBoolean:aValue] atIndex:0];
 	[self.folderActionsStatusScript callHandler:@"setFolderActionsEnabled" withArguments:args errorInfo:nil];
+	self.toggleView.state = !aValue;
+}
+
+- (IBAction)toggleFolderActionStatus:(id)sender {
+	self.folderActionsAreEnabled = !self.toggleView.state;
+}
+
+- (IBAction)addAction:(id)sender {
+	if (!self.addActionController) self.addActionController = [[AddActionController new] autorelease];
+	[self.addActionController open:self];
 }
 
 @end
