@@ -35,6 +35,37 @@
     [super dealloc];
 }
 
+- (void)awakeFromNib
+{
+	NSArray *keyPaths = [NSArray arrayWithObjects:[NSExpression expressionForKeyPath:@"name"],
+	                                              [NSExpression expressionForKeyPath:@"path"],
+												  [NSExpression expressionForKeyPath:@"extension"], nil];
+	NSArray *operators = [NSArray arrayWithObjects:[NSNumber numberWithInteger:NSEqualToPredicateOperatorType],
+	                                               [NSNumber numberWithInteger:NSNotEqualToPredicateOperatorType],
+	                                               [NSNumber numberWithInteger:NSBeginsWithPredicateOperatorType],
+	                                               [NSNumber numberWithInteger:NSEndsWithPredicateOperatorType],
+	                                               [NSNumber numberWithInteger:NSContainsPredicateOperatorType],
+	                                               nil];
+
+	NSPredicateEditorRowTemplate *template = [[NSPredicateEditorRowTemplate alloc] initWithLeftExpressions:keyPaths
+	                                                                          rightExpressionAttributeType:NSStringAttributeType
+	                                                                                              modifier:NSDirectPredicateModifier 
+	                                                                                             operators:operators 
+	                                                                                               options:(NSCaseInsensitivePredicateOption | NSDiacriticInsensitivePredicateOption)];
+
+	NSArray *compoundTypes = [NSArray arrayWithObjects:[NSNumber numberWithInteger:NSAndPredicateType],
+	                                                   [NSNumber numberWithInteger:NSOrPredicateType],
+													   [NSNumber numberWithInteger:NSNotPredicateType],
+	                                                   nil];
+	NSPredicateEditorRowTemplate *compound = [[NSPredicateEditorRowTemplate alloc] initWithCompoundTypes:compoundTypes];
+
+	NSArray *rowTemplates = [NSArray arrayWithObjects:template, compound, nil];
+	[template release];
+	[compound release];
+
+	[self.predicateEditor setRowTemplates:rowTemplates];
+}
+
 +(NSSet *)keyPathsForValuesAffectingFiles {
 	return [NSSet setWithObject:@"filePath"];
 }
@@ -66,6 +97,7 @@
 - (IBAction)open:(id)sender {
 	self.filePath = NSHomeDirectory();
 	[NSApp beginSheet:self.window modalForWindow:[NSApp mainWindow] modalDelegate:self didEndSelector:nil contextInfo:nil];
+	[self.predicateEditor addRow:self];
 }
 
 - (IBAction)cancel:(id)sender {

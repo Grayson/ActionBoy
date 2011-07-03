@@ -70,7 +70,6 @@
 		1D8EB6AC13B3DB46003B70DB = {
 			isa = PBXGroup;
 			children = (
-				1D8EB6EC13B3F476003B70DB /* Carbon.framework */,
 				1D8EB6C113B3DB46003B70DB /* ActionBoy */,
 				1D8EB6BA13B3DB46003B70DB /* Frameworks */,
 				1D8EB6B813B3DB46003B70DB /* Products */,
@@ -88,6 +87,7 @@
 		1D8EB6BA13B3DB46003B70DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D8EB6EC13B3F476003B70DB /* Carbon.framework */,
 				1D8EB6BB13B3DB46003B70DB /* Cocoa.framework */,
 				1D8EB6BD13B3DB46003B70DB /* Other Frameworks */,
 			);
