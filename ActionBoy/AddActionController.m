@@ -12,8 +12,11 @@
 @implementation AddActionController
 @synthesize window = _window;
 @synthesize predicateEditor = _predicateEditor;
+@synthesize tabView = _tabView;
+@synthesize actionButton = _actionButton;
+@synthesize chooseLocationButton = _chooseLocationButton;
 @synthesize filePath = _filePath;
-@dynamic files;
+@synthesize actionPath = _actionPath;
 
 - (id)init
 {
@@ -29,7 +32,12 @@
 {
 	self.window = nil;
 	self.predicateEditor = nil;
+	self.tabView = nil;
+	self.actionButton = nil;
+	self.chooseLocationButton = nil;
 	self.filePath = nil;
+	self.actionButton = nil;
+
     [super dealloc];
 }
 
@@ -94,14 +102,27 @@
 	self.filePath = [op filename];
 }
 
+- (IBAction)chooseLocation:(id)sender {
+	NSOpenPanel *op = [NSOpenPanel openPanel];
+	[op setCanChooseFiles:self.actionButton.indexOfSelectedItem == kScriptAction];
+	[op setCanChooseDirectories:self.actionButton.indexOfSelectedItem != kScriptAction];
+	if ([op runModal] != NSOKButton) return;
+	self.actionPath = [op filename];
+}
+
 - (IBAction)open:(id)sender {
 	self.filePath = NSHomeDirectory();
+	[self.tabView selectTabViewItemAtIndex:0];
 	[NSApp beginSheet:self.window modalForWindow:[NSApp mainWindow] modalDelegate:self didEndSelector:nil contextInfo:nil];
 }
 
 - (IBAction)cancel:(id)sender {
 	[NSApp endSheet:self.window];
 	[self.window orderOut:sender];
+}
+
+- (IBAction)changeTabView:(id)sender {
+	[self.tabView selectTabViewItemAtIndex:[sender tag]];
 }
 
 - (IBAction)predicateEditorRulesHaveChanged:(id)sender {
