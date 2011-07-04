@@ -24,6 +24,8 @@
 
 		[NSBundle loadNibNamed:@"MainWindow" owner:self];
 		[NSTimer scheduledTimerWithTimeInterval:2. target:self selector:@selector(_pollForFolderActionStatus) userInfo:nil repeats:YES];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newActionNotification:) name:kNewActionNotification object:nil];
     }
     
     return self;

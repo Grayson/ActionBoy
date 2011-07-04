@@ -10,6 +10,7 @@
 #import "NSAppleScript+FCSAdditions.h"
 #import "ToggleView.h"
 #import "AddActionController.h"
+#import "common.h"
 
 @interface MainWindowController : NSObject {
 @private

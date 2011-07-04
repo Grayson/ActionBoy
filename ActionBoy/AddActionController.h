@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FolderAction.h"
+#import "common.h"
 
 @interface AddActionController : NSObject {
 @private

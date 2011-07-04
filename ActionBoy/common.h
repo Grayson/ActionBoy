@@ -1,0 +1,1 @@
+#define kNewActionNotification @"com.fromconcentratesoftware.actionboy.newactionnotification"

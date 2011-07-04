@@ -130,7 +130,14 @@
 }
 
 - (IBAction)apply:(id)sender {
-	NSLog(@"%@", self.predicateEditor.objectValue);
+	FolderAction *action = [FolderAction action];
+	action.folderPath = self.filePath;
+	action.destinationPath = self.actionPath;
+	action.action = self.actionButton.indexOfSelectedItem;
+	action.predicate = self.predicateEditor.objectValue;
+	[[NSNotificationCenter defaultCenter] postNotificationName:kNewActionNotification
+                                                        object:self
+														userInfo:[NSDictionary dictionaryWithObject:action forKey:@"action"]];
 	
 	[NSApp endSheet:self.window];
 	[self.window orderOut:sender];

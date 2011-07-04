@@ -36,6 +36,7 @@
 		1D29BA5E13C00A5000DF131E /* ArrayToStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayToStringTransformer.m; sourceTree = "<group>"; };
 		1D2B43A213C11542003EB589 /* FolderAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderAction.h; sourceTree = "<group>"; };
 		1D2B43A313C11542003EB589 /* FolderAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderAction.m; sourceTree = "<group>"; };
+		1D2B43A613C2702B003EB589 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		1D62E36A13BC1AAE00F59675 /* AddActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddActionController.h; sourceTree = "<group>"; };
 		1D62E36B13BC1AAE00F59675 /* AddActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddActionController.m; sourceTree = "<group>"; };
 		1D8EB6B713B3DB46003B70DB /* ActionBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +86,7 @@
 		1D29BA6113C00A6B00DF131E /* Helper Objects */ = {
 			isa = PBXGroup;
 			children = (
+				1D2B43A613C2702B003EB589 /* common.h */,
 				1D29BA5D13C00A5000DF131E /* ArrayToStringTransformer.h */,
 				1D29BA5E13C00A5000DF131E /* ArrayToStringTransformer.m */,
 				1D2B43A213C11542003EB589 /* FolderAction.h */,

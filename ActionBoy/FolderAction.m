@@ -36,6 +36,8 @@
     [super dealloc];
 }
 
++ (id)action { return [[[self class] new] autorelease]; }
+
 - (void)encodeWithCoder:(NSCoder *)coder {
 	[coder encodeObject:self.folderPath forKey:@"folderPath"];
 	[coder encodeObject:self.destinationPath forKey:@"destinationPath"];

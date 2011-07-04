@@ -30,4 +30,6 @@ enum {
 @property (retain) NSPredicate * predicate;
 @property (assign) BOOL isEnabled;
 
++ (id)action;
+
 @end
