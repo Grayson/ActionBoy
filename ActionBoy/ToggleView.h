@@ -17,7 +17,7 @@
 @end
 
 
-@interface ToggleView : NSControl {
+@interface ToggleView : NSControl<NSCoding> {
 @private
 	BOOL _state;
 	BOOL _isAnimating;

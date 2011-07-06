@@ -23,11 +23,13 @@ enum {
 	NSString *_destinationPath;
 	NSUInteger _action;
 	NSPredicate *_predicate;
+	BOOL _isEnabled;
 }
 @property (retain) NSString * folderPath;
 @property (retain) NSString * destinationPath;
 @property (assign) NSUInteger action;
 @property (retain) NSPredicate * predicate;
+@property (assign) BOOL isEnabled;
 
 + (id)action;
 

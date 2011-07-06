@@ -11,8 +11,10 @@
 
 @implementation MainWindowController
 @dynamic folderActionsAreEnabled;
+@dynamic visibleActions;
 @synthesize folderActionsStatusScript = _folderActionsStatusScript;
 @synthesize window = _window;
+@synthesize foldersWithActionsController = _foldersWithActionsController;
 @synthesize toggleView = _toggleView;
 @synthesize addActionController = _addActionController;
 @synthesize folderActions = _folderActions;
@@ -46,11 +48,16 @@
 	self.toggleView = nil;
 	self.window = nil;
 	self.addActionController = nil;
+	self.foldersWithActionsController = nil;
     [super dealloc];
 }
 
 - (void)awakeFromNib
 {
+	NSToolbar *tb = [[[NSToolbar alloc] initWithIdentifier:@"com.fromconcentratesoftware.actionboy.maintoolbar"] autorelease];
+	tb.delegate = self;
+	self.window.toolbar = tb;
+	
 	self.folderActionsAreEnabled = self.folderActionsAreEnabled;
 }
 
@@ -67,6 +74,20 @@
 	[self.folderActionsStatusScript callHandler:@"setFolderActionsEnabled" withArguments:args errorInfo:nil];
 	self.toggleView.state = !aValue;
 }
+
+- (NSArray *)visibleActions
+{	
+	NSString *path = [[self.foldersWithActionsController selectedObjects] lastObject];
+	return [self.folderActions filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"folderPath == %@", path]];
+}
+
+- (void)setVisibleActions:(NSArray *)aValue
+{
+	// noop
+}
+
+#pragma mark -
+#pragma mark IBActions
 
 - (IBAction)toggleFolderActionStatus:(id)sender {
 	self.folderActionsAreEnabled = !self.toggleView.state;
@@ -98,6 +119,48 @@
 	[actions addObject:action];
 	self.folderActions = actions;
 	[self saveActions:nil];
+}
+
+#pragma mark -
+#pragma mark Delegate methods
+
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
+	NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier] autorelease];
+	item.target = self;
+	if ([itemIdentifier isEqualToString:@"toggle"]) {
+		item.label = NSLocalizedString(@"Folder Action Status", @"toolbar label");
+		item.view = self.toggleView;
+		item.maxSize = NSMakeSize(92., 32.);
+	}
+	else if ([itemIdentifier isEqualToString:@"add"]) {
+		item.label = NSLocalizedString(@"Add", @";");
+		item.target = self;
+		item.action = @selector(addAction:);
+		item.image = [NSImage imageNamed:@"NSAddTemplate"];
+	}
+	else if ([itemIdentifier isEqualToString:@"remove"]) {
+		item.label = NSLocalizedString(@"Remove", @";");
+		item.target = self;
+		item.image = [NSImage imageNamed:@"NSRemoveTemplate"];
+	}
+	item.paletteLabel = item.label;
+	return item;
+}
+
+- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar {
+	return [NSArray arrayWithObjects:@"add", @"remove", @"toggle", NSToolbarCustomizeToolbarItemIdentifier, NSToolbarFlexibleSpaceItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarSeparatorItemIdentifier, nil];
+}
+
+- (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar {
+	return [NSArray arrayWithObjects:@"toggle", NSToolbarSeparatorItemIdentifier, @"add", NSToolbarFlexibleSpaceItemIdentifier, nil];
+}
+
+- (NSArray *)toolbarSelectableItemIdentifiers:(NSToolbar *)toolbar {
+	return nil;
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+	self.visibleActions = nil;
 }
 
 @end

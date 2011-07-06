@@ -13,10 +13,11 @@
 #import "FolderAction.h"
 #import "common.h"
 
-@interface MainWindowController : NSObject {
+@interface MainWindowController : NSObject<NSToolbarDelegate> {
 @private
 	IBOutlet NSWindow *_window;
 	IBOutlet ToggleView *_toggleView;
+	IBOutlet NSArrayController *_foldersWithActionsController;
 
 	AddActionController *_addActionController;
 
@@ -27,9 +28,11 @@
 @property (assign) BOOL folderActionsAreEnabled;
 @property (retain) NSAppleScript *folderActionsStatusScript;
 @property (assign) NSWindow *window;
+@property (retain) NSArrayController *foldersWithActionsController;
 @property (retain) ToggleView *toggleView;
 @property (retain) AddActionController *addActionController;
 @property (retain) NSArray *folderActions;
+@property (retain) NSArray *visibleActions;
 
 - (IBAction)toggleFolderActionStatus:(id)sender;
 - (IBAction)addAction:(id)sender;

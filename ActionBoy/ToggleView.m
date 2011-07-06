@@ -37,6 +37,14 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+	[super encodeWithCoder:encoder];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+	return [super initWithCoder:decoder];
+}
+
 - (void)dealloc
 {
 	self.animation = nil;

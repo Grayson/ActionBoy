@@ -14,6 +14,7 @@
 @synthesize destinationPath = _destinationPath;
 @synthesize action = _action;
 @synthesize predicate = _predicate;
+@synthesize isEnabled = _isEnabled;
 
 - (id)init
 {
@@ -42,6 +43,7 @@
 	[coder encodeObject:self.destinationPath forKey:@"destinationPath"];
 	[coder encodeObject:self.predicate forKey:@"predicate"];
 	[coder encodeInt:(int)self.action forKey:@"action"];
+	[coder encodeBool:self.isEnabled forKey:@"isEnabled"];
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
@@ -51,6 +53,7 @@
 	self.destinationPath = [coder decodeObjectForKey:@"destinationPath"];
 	self.predicate = [coder decodeObjectForKey:@"predicate"];
 	self.action = (NSUInteger)[coder decodeIntForKey:@"action"];
+	self.isEnabled = [coder decodeBoolForKey:@"isEnabled"];
     return self;
 }
 
