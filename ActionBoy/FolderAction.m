@@ -66,7 +66,7 @@
 - (void)performActions {
 	NSFileManager *fm = [NSFileManager defaultManager];
 	for (NSString *file in [self matchedFiles]) {
-		if (self.action == kCopyAction) [fm copyItemAtPath:file toPath:self.destinationPath error:nil];
+		if (self.action == kCopyAction) [fm copyItemAtPath:file toPath:[self.destinationPath stringByAppendingPathComponent:[file lastPathComponent]] error:nil];
 		else if (self.action == kMoveAction) [fm moveItemAtPath:file toPath:self.destinationPath error:nil];
 		else if (self.action == kScriptAction) {
 			// Should code this...
