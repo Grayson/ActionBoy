@@ -43,9 +43,9 @@
 
 - (void)awakeFromNib
 {
-	NSArray *keyPaths = [NSArray arrayWithObjects:[NSExpression expressionForKeyPath:@"name"],
-	                                              [NSExpression expressionForKeyPath:@"path"],
-												  [NSExpression expressionForKeyPath:@"extension"], nil];
+	NSArray *keyPaths = [NSArray arrayWithObjects:[NSExpression expressionForKeyPath:@"lastPathComponent"],
+	                                              [NSExpression expressionForKeyPath:@"self"],
+												  [NSExpression expressionForKeyPath:@"pathExtension"], nil];
 	NSArray *operators = [NSArray arrayWithObjects:[NSNumber numberWithInteger:NSContainsPredicateOperatorType],
 												   [NSNumber numberWithInteger:NSEqualToPredicateOperatorType],
 	                                               [NSNumber numberWithInteger:NSNotEqualToPredicateOperatorType],
@@ -69,6 +69,7 @@
 	[template release];
 	[compound release];
 
+	self.predicateEditor.formattingStringsFilename = @"RuleEditorFormatting";
 	[self.predicateEditor setRowTemplates:rowTemplates];
 	[self.predicateEditor addRow:self];
 }

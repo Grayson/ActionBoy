@@ -32,4 +32,7 @@ enum {
 
 + (id)action;
 
+- (NSArray *)matchedFiles;
+- (void)performActions;
+
 @end

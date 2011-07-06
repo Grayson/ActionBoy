@@ -7,6 +7,8 @@
 //
 
 #import "FolderAction.h"
+#import "NSApplication+ActionBoy.h"
+#import "NSAppleScript+FCSAdditions.h"
 
 
 @implementation FolderAction
@@ -57,12 +59,39 @@
 
 - (BOOL)isEnabled
 {
-	return NO;
+    NSAppleEventDescriptor *result = [[NSApp folderActionStatusScript] callHandler:@"folderHasAction"
+                                                                     withArguments:[NSArray arrayWithObject:self.folderPath]
+                                                                         errorInfo:nil];
+	return (BOOL)[result booleanValue];
 }
 
 - (void)setIsEnabled:(BOOL)aValue
 {
-	NSLog(@"%s", _cmd);
+	NSString *actionPath = nil;
+	[[NSApp folderActionStatusScript] callHandler:aValue ? @"attachAction" : @"detachAction"
+                                    withArguments:[NSArray arrayWithObjects:self.folderPath, aValue ? actionPath : nil, nil]
+                                        errorInfo:nil];
+}
+
+- (NSArray *)matchedFiles {
+	// Get master list of files
+	NSMutableArray *files = [NSMutableArray array];
+	for (NSString *fileName in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.folderPath error:nil])
+		[files addObject:[self.folderPath stringByAppendingPathComponent:fileName]];
+	
+	return [files filteredArrayUsingPredicate:self.predicate];
+}
+
+- (void)performActions {
+	NSFileManager *fm = [NSFileManager defaultManager];
+	for (NSString *file in [self matchedFiles]) {
+		if (self.action == kCopyAction) [fm copyItemAtPath:file toPath:self.destinationPath error:nil];
+		else if (self.action == kMoveAction) [fm moveItemAtPath:file toPath:self.destinationPath error:nil];
+		else if (self.action == kScriptAction) {
+			// Should code this...
+		}
+		else if (self.action == kLogAction) NSLog(@"[FolderAction LogAction]: %@", file);
+	}
 }
 
 @end

@@ -25,6 +25,9 @@
 		1D8EB6E813B3E191003B70DB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D8EB6E713B3E191003B70DB /* MainWindow.xib */; };
 		1D8EB6EB13B3E249003B70DB /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8EB6EA13B3E249003B70DB /* MainWindowController.m */; };
 		1D8EB6ED13B3F476003B70DB /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8EB6EC13B3F476003B70DB /* Carbon.framework */; };
+		1D9C1B9713C4A58700B651A7 /* RuleEditorFormatting.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C1B9613C4A58700B651A7 /* RuleEditorFormatting.strings */; };
+		1DF8EAB513C3FA7F007B2F04 /* NSApplication+ActionBoy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8EAB413C3FA7F007B2F04 /* NSApplication+ActionBoy.m */; };
+		1DF8EAB813C3FCFF007B2F04 /* ActionBoyFolderAction.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 1DF8EAB713C3FCFF007B2F04 /* ActionBoyFolderAction.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,10 @@
 		1D8EB6E913B3E249003B70DB /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		1D8EB6EA13B3E249003B70DB /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		1D8EB6EC13B3F476003B70DB /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		1D9C1B9613C4A58700B651A7 /* RuleEditorFormatting.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = RuleEditorFormatting.strings; sourceTree = "<group>"; };
+		1DF8EAB313C3FA7F007B2F04 /* NSApplication+ActionBoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+ActionBoy.h"; sourceTree = "<group>"; };
+		1DF8EAB413C3FA7F007B2F04 /* NSApplication+ActionBoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+ActionBoy.m"; sourceTree = "<group>"; };
+		1DF8EAB713C3FCFF007B2F04 /* ActionBoyFolderAction.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ActionBoyFolderAction.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +103,8 @@
 				1D2B43A313C11542003EB589 /* FolderAction.m */,
 				1D2B43A713C28259003EB589 /* FolderActionToStringTransformer.h */,
 				1D2B43A813C28259003EB589 /* FolderActionToStringTransformer.m */,
+				1DF8EAB313C3FA7F007B2F04 /* NSApplication+ActionBoy.h */,
+				1DF8EAB413C3FA7F007B2F04 /* NSApplication+ActionBoy.m */,
 			);
 			name = "Helper Objects";
 			sourceTree = "<group>";
@@ -178,6 +187,8 @@
 		1D8EB6C213B3DB46003B70DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D9C1B9613C4A58700B651A7 /* RuleEditorFormatting.strings */,
+				1DF8EAB713C3FCFF007B2F04 /* ActionBoyFolderAction.scpt */,
 				1D8EB6E513B3E17F003B70DB /* FolderActionStatus.scpt */,
 				1D8EB6C313B3DB46003B70DB /* ActionBoy-Info.plist */,
 				1D8EB6C413B3DB46003B70DB /* InfoPlist.strings */,
@@ -253,6 +264,8 @@
 				1D8EB6E613B3E17F003B70DB /* FolderActionStatus.scpt in Resources */,
 				1D8EB6E813B3E191003B70DB /* MainWindow.xib in Resources */,
 				1D1970FA13B4CCC4003C5E24 /* AddActionSheet.xib in Resources */,
+				1DF8EAB813C3FCFF007B2F04 /* ActionBoyFolderAction.scpt in Resources */,
+				1D9C1B9713C4A58700B651A7 /* RuleEditorFormatting.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +286,7 @@
 				1D29BA5F13C00A5000DF131E /* ArrayToStringTransformer.m in Sources */,
 				1D2B43A413C11542003EB589 /* FolderAction.m in Sources */,
 				1D2B43A913C28259003EB589 /* FolderActionToStringTransformer.m in Sources */,
+				1DF8EAB513C3FA7F007B2F04 /* NSApplication+ActionBoy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
