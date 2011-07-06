@@ -13,16 +13,21 @@
 @implementation FolderAction (Applescript)
 - (BOOL)isEnabled
 {
+	NSAppleEventDescriptor *args = [NSAppleEventDescriptor listDescriptor];
+	[args insertDescriptor:[NSAppleEventDescriptor descriptorWithString:self.folderPath] atIndex:1];
     NSAppleEventDescriptor *result = [[NSApp folderActionStatusScript] callHandler:@"folderHasAction"
-                                                                     withArguments:[NSArray arrayWithObject:self.folderPath]
+                                                                     withArguments:args
                                                                          errorInfo:nil];
 	return (BOOL)[result booleanValue];
 }
 
 - (void)setIsEnabled:(BOOL)aValue
 {
+	NSDictionary *err = nil;
+	NSAppleEventDescriptor *args = [NSAppleEventDescriptor listDescriptor];
+	[args insertDescriptor:[NSAppleEventDescriptor descriptorWithString:self.folderPath] atIndex:1];
 	[[NSApp folderActionStatusScript] callHandler:aValue ? @"attachAction" : @"detachAction"
-                                    withArguments:[NSArray arrayWithObjects:self.folderPath, nil]
-                                        errorInfo:nil];
+                                    withArguments:args
+                                        errorInfo:&err];
 }
 @end
