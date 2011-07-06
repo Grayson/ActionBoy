@@ -12,6 +12,7 @@
 		1D1970FA13B4CCC4003C5E24 /* AddActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D1970F913B4CCC4003C5E24 /* AddActionSheet.xib */; };
 		1D29BA5F13C00A5000DF131E /* ArrayToStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29BA5E13C00A5000DF131E /* ArrayToStringTransformer.m */; };
 		1D2B43A413C11542003EB589 /* FolderAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B43A313C11542003EB589 /* FolderAction.m */; };
+		1D2B43A913C28259003EB589 /* FolderActionToStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B43A813C28259003EB589 /* FolderActionToStringTransformer.m */; };
 		1D62E36C13BC1AAE00F59675 /* AddActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62E36B13BC1AAE00F59675 /* AddActionController.m */; };
 		1D8EB6BC13B3DB46003B70DB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8EB6BB13B3DB46003B70DB /* Cocoa.framework */; };
 		1D8EB6C613B3DB46003B70DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D8EB6C413B3DB46003B70DB /* InfoPlist.strings */; };
@@ -37,6 +38,8 @@
 		1D2B43A213C11542003EB589 /* FolderAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderAction.h; sourceTree = "<group>"; };
 		1D2B43A313C11542003EB589 /* FolderAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderAction.m; sourceTree = "<group>"; };
 		1D2B43A613C2702B003EB589 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		1D2B43A713C28259003EB589 /* FolderActionToStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderActionToStringTransformer.h; sourceTree = "<group>"; };
+		1D2B43A813C28259003EB589 /* FolderActionToStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderActionToStringTransformer.m; sourceTree = "<group>"; };
 		1D62E36A13BC1AAE00F59675 /* AddActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddActionController.h; sourceTree = "<group>"; };
 		1D62E36B13BC1AAE00F59675 /* AddActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddActionController.m; sourceTree = "<group>"; };
 		1D8EB6B713B3DB46003B70DB /* ActionBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +94,8 @@
 				1D29BA5E13C00A5000DF131E /* ArrayToStringTransformer.m */,
 				1D2B43A213C11542003EB589 /* FolderAction.h */,
 				1D2B43A313C11542003EB589 /* FolderAction.m */,
+				1D2B43A713C28259003EB589 /* FolderActionToStringTransformer.h */,
+				1D2B43A813C28259003EB589 /* FolderActionToStringTransformer.m */,
 			);
 			name = "Helper Objects";
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				1D62E36C13BC1AAE00F59675 /* AddActionController.m in Sources */,
 				1D29BA5F13C00A5000DF131E /* ArrayToStringTransformer.m in Sources */,
 				1D2B43A413C11542003EB589 /* FolderAction.m in Sources */,
+				1D2B43A913C28259003EB589 /* FolderActionToStringTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

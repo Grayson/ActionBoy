@@ -15,6 +15,7 @@
 @synthesize window = _window;
 @synthesize toggleView = _toggleView;
 @synthesize addActionController = _addActionController;
+@synthesize folderActions = _folderActions;
 
 - (id)init
 {
@@ -26,6 +27,14 @@
 		[NSTimer scheduledTimerWithTimeInterval:2. target:self selector:@selector(_pollForFolderActionStatus) userInfo:nil repeats:YES];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newActionNotification:) name:kNewActionNotification object:nil];
+		
+		NSData *actionData = [[NSUserDefaults standardUserDefaults] objectForKey:kPrefsActionDataKey];
+		if (!actionData) goto skipUnarchiveActions;
+		NSArray *actions = [NSKeyedUnarchiver unarchiveObjectWithData:actionData];
+		if (!actions) goto skipUnarchiveActions;
+		self.folderActions = actions;
+		
+		skipUnarchiveActions:;
     }
     
     return self;
@@ -66,6 +75,29 @@
 - (IBAction)addAction:(id)sender {
 	if (!self.addActionController) self.addActionController = [[AddActionController new] autorelease];
 	[self.addActionController open:self];
+}
+
+- (IBAction)saveActions:(id)sender {
+	NSData *actionData = [NSKeyedArchiver archivedDataWithRootObject:self.folderActions];
+	if (!actionData) {
+		// FIXME: Show an error here.
+		return;
+	}
+	[[NSUserDefaults standardUserDefaults] setObject:actionData forKey:kPrefsActionDataKey];
+}
+
+#pragma mark -
+#pragma mark Notifications
+
+- (void)newActionNotification:(NSNotification *)aNotification
+{
+	FolderAction *action = [[aNotification userInfo] objectForKey:@"action"];
+	if (!action) return;
+	
+	NSMutableArray *actions = [NSMutableArray arrayWithArray:self.folderActions];
+	[actions addObject:action];
+	self.folderActions = actions;
+	[self saveActions:nil];
 }
 
 @end

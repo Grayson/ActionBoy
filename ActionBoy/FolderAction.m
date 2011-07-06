@@ -62,6 +62,7 @@
 
 - (void)setIsEnabled:(BOOL)aValue
 {
+	NSLog(@"%s", _cmd);
 }
 
 @end
