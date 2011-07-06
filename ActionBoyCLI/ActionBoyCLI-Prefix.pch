@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ActionBoyCLI' target in the 'ActionBoyCLI' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

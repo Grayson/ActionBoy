@@ -7,8 +7,6 @@
 //
 
 #import "FolderAction.h"
-#import "NSApplication+ActionBoy.h"
-#import "NSAppleScript+FCSAdditions.h"
 
 
 @implementation FolderAction
@@ -16,7 +14,6 @@
 @synthesize destinationPath = _destinationPath;
 @synthesize action = _action;
 @synthesize predicate = _predicate;
-@dynamic isEnabled;
 
 - (id)init
 {
@@ -55,22 +52,6 @@
 	self.predicate = [coder decodeObjectForKey:@"predicate"];
 	self.action = (NSUInteger)[coder decodeIntForKey:@"action"];
     return self;
-}
-
-- (BOOL)isEnabled
-{
-    NSAppleEventDescriptor *result = [[NSApp folderActionStatusScript] callHandler:@"folderHasAction"
-                                                                     withArguments:[NSArray arrayWithObject:self.folderPath]
-                                                                         errorInfo:nil];
-	return (BOOL)[result booleanValue];
-}
-
-- (void)setIsEnabled:(BOOL)aValue
-{
-	NSString *actionPath = nil;
-	[[NSApp folderActionStatusScript] callHandler:aValue ? @"attachAction" : @"detachAction"
-                                    withArguments:[NSArray arrayWithObjects:self.folderPath, aValue ? actionPath : nil, nil]
-                                        errorInfo:nil];
 }
 
 - (NSArray *)matchedFiles {

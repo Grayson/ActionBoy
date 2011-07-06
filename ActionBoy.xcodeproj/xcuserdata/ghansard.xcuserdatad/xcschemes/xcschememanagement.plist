@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ActionBoyCLI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1D8EB6B613B3DB46003B70DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1D9C1B9B13C4AD3400B651A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

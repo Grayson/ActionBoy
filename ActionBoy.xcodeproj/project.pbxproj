@@ -26,9 +26,36 @@
 		1D8EB6EB13B3E249003B70DB /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8EB6EA13B3E249003B70DB /* MainWindowController.m */; };
 		1D8EB6ED13B3F476003B70DB /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8EB6EC13B3F476003B70DB /* Carbon.framework */; };
 		1D9C1B9713C4A58700B651A7 /* RuleEditorFormatting.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C1B9613C4A58700B651A7 /* RuleEditorFormatting.strings */; };
+		1D9C1B9F13C4AD3400B651A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9C1B9E13C4AD3400B651A7 /* Foundation.framework */; };
+		1D9C1BA213C4AD3400B651A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C1BA113C4AD3400B651A7 /* main.m */; };
+		1D9C1BA913C4AE5500B651A7 /* FolderAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B43A313C11542003EB589 /* FolderAction.m */; };
+		1D9C1BAE13C4AEDF00B651A7 /* FolderAction+Applescript.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C1BAD13C4AEDF00B651A7 /* FolderAction+Applescript.m */; };
+		1D9C1BAF13C4AFA500B651A7 /* ActionBoyCLI in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C1B9C13C4AD3400B651A7 /* ActionBoyCLI */; };
 		1DF8EAB513C3FA7F007B2F04 /* NSApplication+ActionBoy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8EAB413C3FA7F007B2F04 /* NSApplication+ActionBoy.m */; };
 		1DF8EAB813C3FCFF007B2F04 /* ActionBoyFolderAction.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 1DF8EAB713C3FCFF007B2F04 /* ActionBoyFolderAction.scpt */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D9C1BAA13C4AE6400B651A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D8EB6AE13B3DB46003B70DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D9C1B9B13C4AD3400B651A7;
+			remoteInfo = ActionBoyCLI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1D9C1B9A13C4AD3400B651A7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D1970E313B4C67C003C5E24 /* MainWindowController+PrivateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainWindowController+PrivateMethods.h"; sourceTree = "<group>"; };
@@ -66,6 +93,13 @@
 		1D8EB6EA13B3E249003B70DB /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		1D8EB6EC13B3F476003B70DB /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		1D9C1B9613C4A58700B651A7 /* RuleEditorFormatting.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = RuleEditorFormatting.strings; sourceTree = "<group>"; };
+		1D9C1B9C13C4AD3400B651A7 /* ActionBoyCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ActionBoyCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9C1B9E13C4AD3400B651A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D9C1BA113C4AD3400B651A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1D9C1BA413C4AD3400B651A7 /* ActionBoyCLI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActionBoyCLI-Prefix.pch"; sourceTree = "<group>"; };
+		1D9C1BA513C4AD3400B651A7 /* ActionBoyCLI.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ActionBoyCLI.1; sourceTree = "<group>"; };
+		1D9C1BAC13C4AEDF00B651A7 /* FolderAction+Applescript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FolderAction+Applescript.h"; sourceTree = "<group>"; };
+		1D9C1BAD13C4AEDF00B651A7 /* FolderAction+Applescript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FolderAction+Applescript.m"; sourceTree = "<group>"; };
 		1DF8EAB313C3FA7F007B2F04 /* NSApplication+ActionBoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+ActionBoy.h"; sourceTree = "<group>"; };
 		1DF8EAB413C3FA7F007B2F04 /* NSApplication+ActionBoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+ActionBoy.m"; sourceTree = "<group>"; };
 		1DF8EAB713C3FCFF007B2F04 /* ActionBoyFolderAction.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ActionBoyFolderAction.scpt; sourceTree = "<group>"; };
@@ -78,6 +112,14 @@
 			files = (
 				1D8EB6ED13B3F476003B70DB /* Carbon.framework in Frameworks */,
 				1D8EB6BC13B3DB46003B70DB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9C1B9913C4AD3400B651A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9C1B9F13C4AD3400B651A7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +143,8 @@
 				1D29BA5E13C00A5000DF131E /* ArrayToStringTransformer.m */,
 				1D2B43A213C11542003EB589 /* FolderAction.h */,
 				1D2B43A313C11542003EB589 /* FolderAction.m */,
+				1D9C1BAC13C4AEDF00B651A7 /* FolderAction+Applescript.h */,
+				1D9C1BAD13C4AEDF00B651A7 /* FolderAction+Applescript.m */,
 				1D2B43A713C28259003EB589 /* FolderActionToStringTransformer.h */,
 				1D2B43A813C28259003EB589 /* FolderActionToStringTransformer.m */,
 				1DF8EAB313C3FA7F007B2F04 /* NSApplication+ActionBoy.h */,
@@ -138,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				1D8EB6C113B3DB46003B70DB /* ActionBoy */,
+				1D9C1BA013C4AD3400B651A7 /* ActionBoyCLI */,
 				1D8EB6BA13B3DB46003B70DB /* Frameworks */,
 				1D8EB6B813B3DB46003B70DB /* Products */,
 			);
@@ -147,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				1D8EB6B713B3DB46003B70DB /* ActionBoy.app */,
+				1D9C1B9C13C4AD3400B651A7 /* ActionBoyCLI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +202,7 @@
 			children = (
 				1D8EB6EC13B3F476003B70DB /* Carbon.framework */,
 				1D8EB6BB13B3DB46003B70DB /* Cocoa.framework */,
+				1D9C1B9E13C4AD3400B651A7 /* Foundation.framework */,
 				1D8EB6BD13B3DB46003B70DB /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -208,6 +255,24 @@
 			name = "FCS Sources";
 			sourceTree = "<group>";
 		};
+		1D9C1BA013C4AD3400B651A7 /* ActionBoyCLI */ = {
+			isa = PBXGroup;
+			children = (
+				1D9C1BA113C4AD3400B651A7 /* main.m */,
+				1D9C1BA513C4AD3400B651A7 /* ActionBoyCLI.1 */,
+				1D9C1BA313C4AD3400B651A7 /* Supporting Files */,
+			);
+			path = ActionBoyCLI;
+			sourceTree = "<group>";
+		};
+		1D9C1BA313C4AD3400B651A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D9C1BA413C4AD3400B651A7 /* ActionBoyCLI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,11 +287,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				1D9C1BAB13C4AE6400B651A7 /* PBXTargetDependency */,
 			);
 			name = ActionBoy;
 			productName = ActionBoy;
 			productReference = 1D8EB6B713B3DB46003B70DB /* ActionBoy.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1D9C1B9B13C4AD3400B651A7 /* ActionBoyCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D9C1BA613C4AD3400B651A7 /* Build configuration list for PBXNativeTarget "ActionBoyCLI" */;
+			buildPhases = (
+				1D9C1B9813C4AD3400B651A7 /* Sources */,
+				1D9C1B9913C4AD3400B651A7 /* Frameworks */,
+				1D9C1B9A13C4AD3400B651A7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActionBoyCLI;
+			productName = ActionBoyCLI;
+			productReference = 1D9C1B9C13C4AD3400B651A7 /* ActionBoyCLI */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -249,6 +332,7 @@
 			projectRoot = "";
 			targets = (
 				1D8EB6B613B3DB46003B70DB /* ActionBoy */,
+				1D9C1B9B13C4AD3400B651A7 /* ActionBoyCLI */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9C1BAF13C4AFA500B651A7 /* ActionBoyCLI in Resources */,
 				1D8EB6C613B3DB46003B70DB /* InfoPlist.strings in Resources */,
 				1D8EB6CC13B3DB46003B70DB /* Credits.rtf in Resources */,
 				1D8EB6D213B3DB46003B70DB /* MainMenu.xib in Resources */,
@@ -287,10 +372,28 @@
 				1D2B43A413C11542003EB589 /* FolderAction.m in Sources */,
 				1D2B43A913C28259003EB589 /* FolderActionToStringTransformer.m in Sources */,
 				1DF8EAB513C3FA7F007B2F04 /* NSApplication+ActionBoy.m in Sources */,
+				1D9C1BAE13C4AEDF00B651A7 /* FolderAction+Applescript.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9C1B9813C4AD3400B651A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9C1BA913C4AE5500B651A7 /* FolderAction.m in Sources */,
+				1D9C1BA213C4AD3400B651A7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D9C1BAB13C4AE6400B651A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D9C1B9B13C4AD3400B651A7 /* ActionBoyCLI */;
+			targetProxy = 1D9C1BAA13C4AE6400B651A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1D8EB6C413B3DB46003B70DB /* InfoPlist.strings */ = {
@@ -382,6 +485,32 @@
 			};
 			name = Release;
 		};
+		1D9C1BA713C4AD3400B651A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ActionBoyCLI/ActionBoyCLI-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1D9C1BA813C4AD3400B651A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ActionBoyCLI/ActionBoyCLI-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -402,6 +531,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1D9C1BA613C4AD3400B651A7 /* Build configuration list for PBXNativeTarget "ActionBoyCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9C1BA713C4AD3400B651A7 /* Debug */,
+				1D9C1BA813C4AD3400B651A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -28,7 +28,6 @@ enum {
 @property (retain) NSString * destinationPath;
 @property (assign) NSUInteger action;
 @property (retain) NSPredicate * predicate;
-@property (assign) BOOL isEnabled;
 
 + (id)action;
 
